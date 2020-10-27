@@ -1,6 +1,6 @@
 <?php
 
-namespace Auryn;
+namespace WPML\Auryn;
 
 class ConfigException extends InjectorException
 {

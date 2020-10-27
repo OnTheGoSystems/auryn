@@ -1,6 +1,6 @@
 <?php
 
-namespace Auryn\Test;
+namespace WPML\Auryn\Test;
 
 class InaccessibleExecutableClassMethod
 {
@@ -675,7 +675,7 @@ function getDelegateClosureInGlobalScope()
 class CloneTest
 {
     public $injector;
-    public function __construct(\Auryn\Injector $injector)
+    public function __construct(\WPML\Auryn\Injector $injector)
     {
         $this->injector = clone $injector;
     }

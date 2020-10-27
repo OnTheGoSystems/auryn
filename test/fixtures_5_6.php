@@ -1,6 +1,6 @@
 <?php
 
-namespace Auryn\Test;
+namespace WPML\Auryn\Test;
 
 class NoTypehintNoDefaultConstructorVariadicClass
 {

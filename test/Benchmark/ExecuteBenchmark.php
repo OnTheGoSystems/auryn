@@ -1,9 +1,9 @@
 <?php
 
-namespace Auryn\Test\Benchmark;
+namespace WPML\Auryn\Test\Benchmark;
 
 use Athletic\AthleticEvent;
-use Auryn\Injector;
+use WPML\Auryn\Injector;
 
 class ExecuteBenchmark extends AthleticEvent
 {

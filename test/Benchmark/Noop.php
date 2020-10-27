@@ -1,6 +1,6 @@
 <?php
 
-namespace Auryn\Test\Benchmark;
+namespace WPML\Auryn\Test\Benchmark;
 
 class Noop
 {
