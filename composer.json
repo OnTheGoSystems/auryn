@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Auryn\\": "lib/"
+            "WPML\\Auryn\\": "lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Auryn\\Test\\": "test/"
+            "WPML\\Auryn\\Test\\": "test/"
         },
         "files": ["test/fixtures.php"]
     }
