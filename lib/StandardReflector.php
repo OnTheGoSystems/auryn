@@ -23,12 +23,19 @@ class StandardReflector implements Reflector
             : null;
     }
 
-    public function getParamTypeHint(\ReflectionFunctionAbstract $function, \ReflectionParameter $param)
-    {
-        return ($reflectionClass = $param->getClass())
-            ? $reflectionClass->getName()
-            : null;
-    }
+	public function getParamTypeHint( \ReflectionFunctionAbstract $function, \ReflectionParameter $param ) {
+		if ( version_compare( '7.1.0', phpversion(), '<' ) ) {
+			$reflectionClass = $param->getType() && ! $param->getType()->isBuiltin()
+				? new \ReflectionClass( $param->getType()->getName() )
+				: null;
+		} else {
+			$reflectionClass = $param->getClass();
+		}
+
+		return ( $reflectionClass )
+			? $reflectionClass->getName()
+			: null;
+	}
 
     public function getFunction($functionName)
     {
