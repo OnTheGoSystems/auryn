@@ -13,11 +13,7 @@ class CachingReflector implements Reflector
     private $reflector;
     private $cache;
 
-    /**
-     * @param Reflector|null $reflector
-     * @param ReflectionCache|null $cache
-     */
-    public function __construct($reflector = null, $cache = null)
+    public function __construct(?Reflector $reflector = null, ?ReflectionCache $cache = null)
     {
         $this->reflector = $reflector ?: new StandardReflector;
         $this->cache = $cache ?: new ReflectionCacheArray;
