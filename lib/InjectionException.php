@@ -6,13 +6,7 @@ class InjectionException extends InjectorException
 {
     public $dependencyChain;
 
-    /**
-     * @param array $inProgressMakes
-     * @param $message
-     * @param $code
-     * @param \Exception|null $previous
-     */
-    public function __construct(array $inProgressMakes, $message = "", $code = 0, $previous = null)
+    public function __construct(array $inProgressMakes, $message = "", $code = 0, ?\Exception $previous = null)
     {
         $this->dependencyChain = array_flip($inProgressMakes);
         ksort($this->dependencyChain);
@@ -22,16 +16,11 @@ class InjectionException extends InjectorException
 
     /**
      * Add a human readable version of the invalid callable to the standard 'invalid invokable' message.
-     *
-     * @param array $inProgressMakes
-     * @param $callableOrMethodStr
-     * @param \Exception|null $previous
-     * @return self
      */
     public static function fromInvalidCallable(
         array $inProgressMakes,
         $callableOrMethodStr,
-        $previous = null
+        ?\Exception $previous = null
     ) {
         $callableString = null;
 
